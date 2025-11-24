@@ -38,7 +38,7 @@ The application allows non-technical editors to define flows, steps, and branchi
     ```bash
     npm install
     ```
-5.  Start the server:
+4.  Start the server:
     ```bash
     npm run develop
     ```
