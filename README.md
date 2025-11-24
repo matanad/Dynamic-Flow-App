@@ -29,16 +29,23 @@ The application allows non-technical editors to define flows, steps, and branchi
     ```bash
     cd backend
     ```
-2.  Install dependencies:
+2.  **Configure Secrets (CRITICAL):**
+    * Copy the template file and rename it:
+    ```bash
+    cp .env.example .env
+    ```
+3.  Install dependencies:
     ```bash
     npm install
     ```
-3.  **Start the server:**
-    * **Note:** The SQLite database is committed to the repository for your convenience. **No manual data import is required.**
+5.  Start the server:
     ```bash
-    npm run strapi dev
+    npm run develop
     ```
     * The admin panel is available at `http://localhost:1337/admin`.
+    * **ADMIN LOGIN DETAILS (For the imported data):**
+        * **Email:** `admin@admin.com`
+        * **Password:** `Admin@2025`
     * The API is available at `http://localhost:1337/api`.
 
 
