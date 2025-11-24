@@ -451,6 +451,7 @@ export interface ApiFlowFlow extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    startStep: Schema.Attribute.Relation<'oneToOne', 'api::step.step'>;
     steps: Schema.Attribute.Relation<'oneToMany', 'api::step.step'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -478,6 +479,7 @@ export interface ApiStepStep extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::step.step'> &
       Schema.Attribute.Private;
     nextStep: Schema.Attribute.Relation<'oneToOne', 'api::step.step'>;
+    nextStepNo: Schema.Attribute.Relation<'oneToOne', 'api::step.step'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;

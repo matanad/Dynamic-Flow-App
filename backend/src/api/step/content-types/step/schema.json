@@ -38,6 +38,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::step.step"
+    },
+    "nextStepNo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::step.step"
     }
   }
 }

@@ -27,6 +27,11 @@
       "relation": "oneToMany",
       "target": "api::step.step",
       "mappedBy": "flow"
+    },
+    "startStep": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::step.step"
     }
   }
 }
