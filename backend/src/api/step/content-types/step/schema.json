@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "steps",
+  "info": {
+    "singularName": "step",
+    "pluralName": "steps",
+    "displayName": "Step"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "question"
+      ]
+    },
+    "flow": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::flow.flow",
+      "inversedBy": "steps"
+    },
+    "nextStep": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::step.step"
+    }
+  }
+}

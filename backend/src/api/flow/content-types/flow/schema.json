@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flows",
+  "info": {
+    "singularName": "flow",
+    "pluralName": "flows",
+    "displayName": "Flow"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "steps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::step.step",
+      "mappedBy": "flow"
+    }
+  }
+}
