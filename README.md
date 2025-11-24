@@ -33,18 +33,14 @@ The application allows non-technical editors to define flows, steps, and branchi
     ```bash
     npm install
     ```
-3.  **Import Data:** (Crucial step to see the sample flows)
-    * A data export file `data.tar.gz` is included in this repo.
-    * Run the following command to import the schema and content:
+3.  **Start the server:**
+    * **Note:** The SQLite database is committed to the repository for your convenience. **No manual data import is required.**
     ```bash
-    npm run strapi import -- --file data.tar.gz
-    ```
-4.  Start the server:
-    ```bash
-    npm run develop
+    npm run strapi dev
     ```
     * The admin panel is available at `http://localhost:1337/admin`.
     * The API is available at `http://localhost:1337/api`.
+
 
 ### 2. Frontend (Next.js)
 
@@ -76,3 +72,6 @@ The application allows non-technical editors to define flows, steps, and branchi
     * `page.tsx`: Acts as a **Server Component** to fetch the initial flow data securely and improve SEO.
     * `FlowManager.tsx`: Acts as a **Client Component** to handle the wizard state and user interactions.
 * **In-Memory State (Bonus):** Used React's `useState` to track user answers as per the assignment requirements ("in memory"). For a production app requiring persistence across reloads, I would opt for `localStorage` or backend synchronization.
+
+### Devops / Version Control
+* **Database Inclusion:** I intentionally removed `.tmp/data.db` from `.gitignore` and committed the SQLite database directly to the repository. While this is not best practice for production environments, I chose this approach for this assignment to ensure a seamless "clone & run" experience for the reviewer without needing to run manual import scripts.
